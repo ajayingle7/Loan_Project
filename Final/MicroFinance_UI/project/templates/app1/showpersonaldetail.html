@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+<center>
+    <br>
+    <h1>PERSONAL DETAILS</h1>
+    <br>
+    <font size="3">
+    <table class="table table-striped table-sm" style="width:90%">
+        <thead align="center" class="thead-dark">
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>DOB</th>
+                <th>Gender</th>
+                <th>Marital Status</th>
+                <th>Spouse Name</th>
+                <th>Adhar No</th>
+                <th>PAN No</th>
+                <th>Contact No</th>
+                <th>Alternate No</th>
+                <th>Email ID</th>
+                <th colspan="2">Action</th>
+        </thead>
+
+        {% for i in obj %}
+        <tbody align="center">
+            <td>{{i.fname}}</td>
+            <td>{{i.mname}}</td>
+            <td>{{i.lname}}</td>
+            <td>{{i.dob}}</td>
+            <td>{{i.gender}}</td>
+            <td>{{i.marital_status}}</td>
+            <td>{{i.spouse_name}}</td>
+            <td>{{i.adhar_no}}</td>
+            <td>{{i.pan_no}}</td>
+            <td>{{i.mob1}}</td>
+            <td>{{i.mob2}}</td>
+            <td>{{i.mail}}</td>
+            <td>
+                <a href="#">
+                    <button class="btn btn-dm btn-danger">Delete</button>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <button class="btn btn-dm btn-warning">Contact</button>
+                </a>
+            </td>
+
+        </tbody>
+        {% endfor %}
+    </table>
+</font>
+</center>
+</body>
+</html>

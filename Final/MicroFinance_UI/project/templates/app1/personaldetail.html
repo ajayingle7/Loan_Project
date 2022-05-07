@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Detail</title>
+    <link rel="stylesheet" href="{% static 'app1/style.css' %}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+</head>
+{% block content %}
+<body>
+<br><br>
+<div>
+    <div class="container ">
+        <div class="jumbotron" style="background-image: linear-gradient(to right, #ccd2eb, #ccd2eb)">
+    <form method="post" class="row g-3">
+        {% csrf_token %}
+        <div class="col-md-12">
+            <center><h2>Personal Details</h2></center>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">First Name<span class="required">*</span></label>
+            <input type="text" class="form-control" name="fn" required aria-describedby="required-description">
+        </div>
+          <div class="col-md-4">
+            <label class="form-label">Middle Name<span class="required">*</span></label>
+            <input type="text" class="form-control" name="mn" required>
+          </div>
+          <div class="col-md-4">
+                <label class="form-label">Last Name<span class="required">*</span></label>
+                <input type="text" class="form-control" name="ln" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Date of Birth<span class="required">*</span></label>
+                <input type="date" class="form-control" name="dob" required aria-describedby="required-description">
+            </div>
+            <div class="dropdown col-md-6">
+                <label class="from-label">Gender</label><span class="required">*</span>
+                <select class="form-control" name="gender" required aria-describedby="required-description">
+                  <option selected>--select--</option>
+                  <option >Male</option>
+                  <option >Female</option>
+                  <option >Other</option>
+                </select>
+            </div>
+
+
+            <div class="dropdown col-md-6">
+                <label class="from-label">Marital Status<span class="required">*</span></label>
+                <select class="form-control" name="mstatus" required>
+                  <option selected>--select--</option>
+                  <option>Married</option>
+                  <option>Unmarried</option>
+                  <option>Divorced</option>
+                  <option>Seperated</option>
+                  <option>Widowed</option>
+                </select>
+            </div>
+            <div class="dropdown col-md-6">
+                <label class="from-label">Spouse Name (if any)</label>
+                <input type="text" class="form-control" name="spname">
+            </div>
+            <div class="dropdown col-md-6">
+                <label class="from-label">Adhar Number<span class="required">*</span></label>
+                <input type="number" class="form-control" name="adhar" required>
+            </div>
+
+            <div class="col-md-6">
+                <label class="from-label">PAN Number<span class="required">*</span></label>
+                <input type="text" class="form-control" name="pan" required>
+            </div>
+            <div class="col-md-6">
+                <label class="from-label">Contact Number<span class="required">*</span></label>
+                <input type="number" class="form-control" name="mob1" required>
+            </div>
+            <div class="col-md-6">
+                <label class="from-label">Alternate Contact Number</label>
+                <input type="number" class="form-control" mob="mob2">
+            </div>
+            <div class="col-md-6">
+                <label class="from-label">Email ID<span class="required">*</span></label>
+                <input type="text" class="form-control" name="mail" required>
+            </div><br>
+    <div class="col-md-12"><br>
+        <input  id="myid" type="submit" value="Submit" class="btn btn-primary">
+    </div>
+
+    </form>
+    <br>
+    <button class="btn btn-warning" style="float:right;"><a href="{% url 'addressurl' %}"> Next</a></button>
+
+    </div>
+        </div>
+    </div>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    </body>
+    {% endblock %}
+    </html>

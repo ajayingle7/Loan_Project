@@ -1,0 +1,215 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Micro Finance | HOME</title>
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="swiper mySwiper" style="height:300px; width:100%" >
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="/static/img/d1.jpg"></div>
+        <div class="swiper-slide"><img src="/static/img/s3.jpg"></div>
+        <div class="swiper-slide"><img src="/static/img/s1.jpg"></div>
+        <div class="swiper-slide"><img src="/static/img/s2.jpg"></div>
+        <div class="swiper-slide"><img src="/static/img/d.jpg"></div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+</div> 
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    autoplay:{
+      delay:1500,
+      disableOnInteraction:false,
+    },
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+<!-- Page Content-->
+<div class="container">
+    <!-- Heading Row-->
+    <div class="row gx-4 gx-lg-5 align-items-center my-5" style="background-image: linear-gradient(to right, #cc7e7e ,#dbe1f5);">
+        <div class="col-lg-7">
+            <!-- Calculator-->
+            <div class="container1">
+                <div class="row">
+                    <div class="col-md-6 mx-auto calculate-form">
+                        <div class="card card-body text-center mt-5">
+                            <h1 class="heading">EMI Calculator</h1>
+                            <form id="loan-form">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Rs</span>
+                                        </div>
+                                        <input
+                                                type="number"
+                                                class="form-control"
+                                                id="amount"
+                                                placeholder="Loan Amount"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                        <input
+                                                type="number"
+                                                class="form-control"
+                                                id="interest"
+                                                placeholder="Interest"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input
+                                            type="number"
+                                            id="years"
+                                            class="form-control"
+                                            placeholder="Years To Repay"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <input
+                                            type="submit"
+                                            value="Calculate"
+                                            class="btn btn-outline-dark px-5"
+                                            style="background-image: linear-gradient(to right, #c53636 ,#c3cffa);"
+                                    />
+                                </div>
+                            </form>
+                            <!-- Loader -->
+                            <div id="loading">
+                                <img src="https://media.giphy.com/media/swhRkVYLJDrCE/giphy.gif" alt="loading"/>
+                            </div>
+                            <!-- Result -->
+                            <div id="result">
+                                <h5>Results</h5>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Monthly Payment</span>
+                                        </div>
+                                        <input
+                                                type="number"
+                                                class="form-control"
+                                                id="monthly-payment"
+                                                disabled
+                                        />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Total Payment</span>
+                                        </div>
+                                        <input
+                                                type="number"
+                                                class="form-control"
+                                                id="total-payment"
+                                                disabled
+                                        />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Total Interest</span>
+                                        </div>
+                                        <input
+                                                type="number"
+                                                class="form-control"
+                                                id="total-interest"
+                                                disabled
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <br>
+        <div class="col-lg-5">
+            <h1 class="font-weight-light">CJC MircoFinance</h1>
+            <p>
+                Microfinance is a banking service provided to unemployed or
+                low-income individuals or groups who otherwise would have no other
+                access to financial services. Microfinance allows people to take on
+                reasonable small business loans safely, and in a manner that is
+                consistent with ethical lending practices.
+            </p>
+            <!-- <a class="btn btn-warning" href="{% url 'enquiryurl' %}">Apply Now</a> -->
+        </div>
+    </div>
+    <br><br>
+    <!-- Content Row-->
+    <div class="row gx-3 gx-lg-5">
+        <div class="col-md-4 mb-5">
+            <div class="card h-80">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        Competitive interest rates starting at 10.49%
+                    </h3>
+                    <p class="card-text">Lowest Rates on Personal Loans</p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-warning btn-sm" href="#!">More Info</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card h-80">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        Digital,paperless online process
+                    </h3>
+                    <p class="card-text">
+                        Not always eye to eye but always heart to heart
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-warning btn-sm" href="#!">More Info</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card h-80">
+                <div class="card-body">
+                    <h3 class="card-title">Flexible Tenures and Trasfers</h3>
+                    <p class="card-text">
+                        Balance transfer of existing Personal Loans and Credit Cards at
+                        affordable rates.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-warning btn-sm" href="#!">More Info</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

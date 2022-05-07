@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Previous Loan Details</title>
+{% endblock %}
+
+{% block content1 %}
+<br><br><br>
+<div class="container">
+    <br>
+    <div class="jumbotron" style="background-image: linear-gradient(to right, #ccd2eb, #ccd2eb)">
+        
+    <form method="post">
+        <center><h1>Previous Loan Details</h1></center>
+        <br>
+        {% csrf_token %}
+        <div class="form-row" >
+            <div class="form-group col-md-6 mb-2">
+                {{form.loan_type|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.loan_amt|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.loan_account_no|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.financing_Bank|as_crispy_field}}
+            </div>
+            <br>
+            <div class="form-group col-md-6 mb-2">
+                {{form.Tenure|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.Monthly_EMI|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.open_date|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.close_date|as_crispy_field}}
+            </div>
+        
+            </div>
+            
+            <br>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+        
+    </form>
+    <br>
+    <button class="btn btn-warning" style="float:right;"><a href="{% url 'confirmurl' %}"> Next</a></button>
+</div>
+
+</div>
+
+{% endblock %}

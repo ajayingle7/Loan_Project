@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>confirmation page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'app1/previousloanconfirmation.css' %}">   
+
+</head>
+<body>
+    <center>
+        <br>
+        <br>
+        <br>
+    <div class="container">
+        <div class="jumbotron myclass" style="background-image: linear-gradient(to right, #ccd2eb, #ccd2eb)">
+            <form method="post">
+                {% csrf_token %}
+             
+                <h1>Do you have any Previous Loan ?</h1>
+                <br>
+                
+                <a href="{% url 'preloanurl' %}">
+                    <input class="btn btn-primary btn-lg mr-2" type="button" value="YES"/>
+                </a>
+                <a href="{% url 'confirmurl' %}">
+                    <input class="btn btn-primary btn-lg mr-2" type="button" value="NO"/>
+                </a>                  
+           
+            </form>
+        </div>
+    </div>
+</center>
+</body>
+</html>

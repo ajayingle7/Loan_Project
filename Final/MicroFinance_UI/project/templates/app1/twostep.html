@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Two step verification</title>
+{% endblock %}
+
+{% block content1 %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container bg-info">
+    <div class="jumbotron" style="background-image: linear-gradient(to right, #ccd2eb, #ccd2eb)">
+        <form method="post">
+            {% csrf_token %}
+            <label>Enter your OTP here</label>
+            <input type="text" name="otp" class="form-control">
+            <br>
+            {% if messages %}
+            {% for i in messages %}
+            <p>{{i}}</p>
+            {% endfor %}
+            {% endif %}
+                <input type="submit" value="SUBMIT" class="btn btn-warning btn-lg">
+            
+        </form>
+    </div>
+</div>
+{% endblock %}

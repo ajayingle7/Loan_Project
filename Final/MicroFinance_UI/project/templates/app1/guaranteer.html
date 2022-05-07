@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Guaranteer Details</title>
+{% endblock %}
+
+{% block content1 %}
+<br><br><br>
+<div class="container">
+    <br>
+    <div class="jumbotron" style="background-image: linear-gradient(to right, #ccd2eb, #ccd2eb)">
+        
+    <form method="post" enctype="multipart/form-data">
+        <center><h1>Guaranteer Details</h1></center>
+        <br>
+        {% csrf_token %}
+        <div class="form-row" >
+            <div class="form-group col-md-6 mb-2">
+                {{form.AAdhar|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.Full_name|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.Relation_with_client|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.Date_of_Birth|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.Contact|as_crispy_field}}
+            </div>
+            <br>
+            <div class="form-group col-md-6 mb-2">
+                {{form.Email|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.Address_line_1|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.Address_line_2|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.City|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.State|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.Pincode|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.Gender|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.Occupation|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.Passport_photo|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.PAN_Card|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                {{form.Aadhar|as_crispy_field}}
+            </div>
+        </div>
+            
+            <br>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+        
+    </form>
+    <br>
+    <button class="btn btn-warning" style="float:right;"><a href="{% url 'documenturl' %}"> Next</a></button>
+</div>
+
+</div>
+
+{% endblock %}

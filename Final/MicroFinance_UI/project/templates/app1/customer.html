@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Welcome</title>
+{% endblock %}
+
+{% block content1 %}
+<center>
+<br><br><br>
+<div class="container" style="width:50%;">
+    <br>
+    
+    <div class="jumbotron" style="background-image: linear-gradient(to right, #ccd2eb, #ccd2eb)">
+        <h1>Welcome to B25 Development Bank</h1>
+    <br>
+    <br> 
+        <a href="{% url 'enquiryurl' %}"><button type="submit" class="btn btn-primary btn-lg">Apply for Loan</button></a>
+     
+        </form>
+    </div>
+</div>
+</center>
+{% endblock %}

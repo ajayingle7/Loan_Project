@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Welcome</title>
+{% endblock %}
+
+{% block content1 %}
+<center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Loan Application</h1>
+    <br>
+    <table class="table table-striped" style="width:90%;">
+        <thead align="center" class="thead-dark">
+               <tr> <th>Full Name</th>
+                <th>Email ID</th>
+                <th>Contact No</th>
+                <th>City</th>
+                <th>PAN No</th>
+                <th>Required Amount</th>
+                <th>Annual Income</th>
+                <th>Tenure</th>
+                <th>CIBIL</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody align="center">
+        {% for i in obj %}
+        <tr>
+            <td>{{i.fullname}}</td>
+            <td>{{i.mail}}</td>
+            <td>{{i.mob}}</td>
+            <td>{{i.city}}</td>
+            <td>{{i.pan_no}}</td>
+            <td>{{i.loan_amt}}</td>
+            <td>{{i.income}}</td>
+            <td>{{i.tenure}}</td>
+            <td>{{num}}</td>
+            <td>
+                <button class="btn btn-dm btn-success"><a href="{% url 'omanagerurl' %}">Approve</a></button>
+
+            </td>
+            <td>
+                <td>
+                    <button class="btn btn-dm btn-danger"><a href="{% url 'delete' i.id %}">Delete</a></button>
+                </td>
+            </td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+
+
+
+    </table>
+</center>
+
+</div>
+{% endblock %}

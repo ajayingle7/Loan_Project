@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enquiry List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+<center>
+    <br>
+    <h1>ENQUIRY LIST</h1>
+    <br>
+    <table class="table table-striped" style="width:90%">
+        <thead align="center" class="thead-dark">
+                <th>Full Name</th>
+                <th>Email ID</th>
+                <th>Contact No</th>
+                <th>City</th>
+                <th>PAN No</th>
+                <th>Required Amount</th>
+                <th>Annual Income</th>
+                <th>Tenure</th>
+                <th colspan="2">Action</th>
+        </thead>
+
+        {% for i in obj %}
+        <tbody align="center">
+            <td>{{i.fullname}}</td>
+            <td>{{i.mail}}</td>
+            <td>{{i.mob}}</td>
+            <td>{{i.city}}</td>
+            <td>{{i.pan_no}}</td>
+            <td>{{i.loan_amt}}</td>
+            <td>{{i.income}}</td>
+            <td>{{i.tenure}}</td>
+            <td>
+                <a href="#">
+                    <button class="btn btn-dm btn-danger">Delete</button>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <button class="btn btn-dm btn-warning">Contact</button>
+                </a>
+            </td>
+
+        </tbody>
+        {% endfor %}
+    </table>
+</center>
+</body>
+</html>

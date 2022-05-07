@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Login</title>
+{% endblock %}
+
+{% block content1 %}
+<br><br><br>
+<div class="container" style="width:50%;">
+    <br>
+
+    <div class="jumbotron" style="background-image: linear-gradient(to right, #ccd2eb, #ccd2eb)">
+
+        <form method="post">
+
+            {% csrf_token %}
+
+        <center><h3>Are you sure to delete record of {{data.fullname}} </h3></center>
+<center>
+
+
+
+
+<input type="submit" value="Delete" class="btn btn-success">
+
+        <button type="button" class="btn btn-danger"><a href="{% url 'rmanagerurl' %}">NO</a></button>
+
+</center>
+        </form>
+    </div>
+</div>
+{% endblock %}

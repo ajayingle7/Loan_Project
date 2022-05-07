@@ -1,0 +1,279 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Welcome</title>
+{% endblock %}
+
+{% block content1 %}
+<br>
+<br>
+<br>
+<center>
+    <h1>Loan Applications</h1>
+    <br>
+    <table class="table table-striped" style="width:90%;">
+        <thead align="center" class="thead-dark">
+
+                <th>Full Name</th>
+                <th>Email ID</th>
+                <th>Contact No</th>
+                <th>City</th>
+                <th>PAN No</th>
+                <th>Required Amount</th>
+                <th>Annual Income</th>
+                <th>Tenure</th>
+                <th>CIBIL</th>
+                <th colspan="2">Action</th>
+        </thead>
+
+        {% for i in obj %}
+        <tbody align="center">
+            <td>{{i.fullname}}</td>
+            <td>{{i.mail}}</td>
+            <td>{{i.mob}}</td>
+            <td>{{i.city}}</td>
+            <td>{{i.pan_no}}</td>
+            <td>{{i.loan_amt}}</td>
+            <td>{{i.income}}</td>
+            <td>{{i.tenure}}</td>
+            <td>{{num}}</td>
+            <td>
+                <a href="#">
+                    <button class="btn btn-dm btn-danger"><a href="{% url 'delete1' i.mail %}">Delete</a></button>
+                </a>
+            </td>
+            <td>
+                <td>
+                    <button class="btn btn-dm btn-success"><a href="{% url 'success' i.mail %}">Approve</a></button>
+                </td>
+            </td>
+
+        </tbody>
+        {% endfor %}
+    </table>
+
+
+
+<hr>
+
+
+    <h1>Persona Detail</h1>
+
+<table class="table table-striped" style="width:90%;">
+        <thead align="center" class="thead-dark">
+        <th>Aadhar No</th>
+                <th>fname</th>
+                <th>mname ID</th>
+                <th>lname</th>
+                <th>dob</th>
+                <th>gender</th>
+                <th>martial_status</th>
+                <th>pan_no</th>
+                <th>mob1</th>
+                <th>mob2</th>
+                <th>mail</th>
+
+
+
+        </thead>
+
+        {% for i in obj1 %}
+        <tbody align="center">
+        <td>{{i.adhar_no}}</td>
+            <td>{{i.fname}}</td>
+            <td>{{i.mname}}</td>
+            <td>{{i.lname}}</td>
+            <td>{{i.dob}}</td>
+            <td>{{i.gender}}</td>
+            <td>{{i.marital_status}}</td>
+            <td>{{i.pan_no}}</td>
+            <td>{{i.mob1}}</td>
+            <td>{{i.mob2}}</td>
+            <td>{{i.mail}}</td>
+
+
+        </tbody>
+        {% endfor %}
+    </table>
+
+
+    <hr>
+
+
+     <h1>Bank Detail</h1>
+
+    <table class="table table-striped" style="width:90%;">
+        <thead align="center" class="thead-dark">
+                <th>Aadhar No</th>
+                <th>Bank Name</th>
+                <th>Accholder</th>
+                <th>Acc_number</th>
+                <th>Confirm_acc_num</th>
+                <th>Account Type</th>
+                <th>Ifsc Code</th>
+                <th>Branch Code</th>
+                <th>branch Name</th>
+
+        </thead>
+
+        {% for i in obj2 %}
+        <tbody align="center">
+        <td>{{i.AAdhar_id}}</td>
+            <td>{{i.bank_name}}</td>
+            <td>{{i.accholder_name}}</td>
+            <td>{{i.acc_number}}</td>
+            <td>{{i.confirm_acc_num}}</td>
+            <td>{{i.Account_type}}</td>
+            <td>{{i.ifsc_code}}</td>
+            <td>{{i.branch_code}}</td>
+                    <td>{{i.branch_name}}</td>
+
+
+
+
+        </tbody>
+        {% endfor %}
+    </table>
+
+
+    <hr>
+
+
+    <hr>
+
+
+     <h1>Previous Loan Detail</h1>
+
+    <table class="table table-striped" style="width:90%;">
+        <thead align="center" class="thead-dark">
+        <th>Id</th>
+                <th>Loan Type</th>
+                <th>loan amt</th>
+                <th>loan account</th>
+                <th>financing bank</th>
+                <th>tenure</th>
+                <th>monthly_emi</th>
+                <th>open date</th>
+                <th>close date</th>
+
+        </thead>
+
+        {% for i in obj3 %}
+        <tbody align="center">
+        <td>{{i.id}}</td>
+            <td>{{i.loan_type}}</td>
+            <td>{{i.loan_amt}}</td>
+            <td>{{i.loan_account_no}}</td>
+            <td>{{i.financing_Bank}}</td>
+            <td>{{i.Tenure}}</td>
+            <td>{{i.Monthly_EMI}}</td>
+            <td>{{i.open_date}}</td>
+                    <td>{{i.close_date}}</td>
+
+
+
+
+        </tbody>
+        {% endfor %}
+    </table>
+
+
+
+
+
+
+
+    <hr>
+
+
+     <h1>Guaranteer Detail</h1>
+
+    <table class="table table-striped" style="width:90%;">
+        <thead align="center" class="thead-dark">
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Relation</th>
+                <th>DOB</th>
+                <th>Contact</th>
+                <th>Email</th>
+                <th>Address Line-1</th>
+                <th>Address Line-2</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Gender</th>
+
+
+
+        </thead>
+
+        {% for i in obj4 %}
+        <tbody align="center">
+        <td>{{i.id}}</td>
+            <td>{{i.Full_name}}</td>
+            <td>{{i.Relation_with_client}}</td>
+            <td>{{i.Date_of_Birth}}</td>
+                    <td>{{i.Contact}}</td>
+
+            <td>{{i.Email}}</td>
+            <td>{{i.Address_line_1}}</td>
+            <td>{{i.Address_line_2}}</td>
+            <td>{{i.City}}</td>
+            <td>{{i.State}}</td>
+            <td>{{i.Gender}}</td>
+
+
+
+
+
+        </tbody>
+        {% endfor %}
+    </table>
+
+
+<h1>Documents Upload</h1>
+<br>
+<table class="table table-striped table-sm" style="width:100%">
+    <thead align="center" class="thead-dark">
+            <th>Adhar Card</th>
+            <th>Passport Size Photo</th>
+            <th>Pan Card</th>
+            <th>Bank Statement</th>
+            <th>Bank Noc</th>
+            <th>Salary Slip</th>
+            <th>Form 16/ITR</th>
+            <th>Signature</th>
+    </thead>
+
+    {% for i in doc %}
+    <tbody align="center">
+        <td><a href="{{i.doc.url}}">{{i.Adhar_Card}}</a></td>
+        <td><a href="{{i.doc.url}}">{{i.Pass_Port_size_Photo}}</a></td>
+        <td><a href="{{i.doc.url}}">{{i.Pan_Card}}</td>
+        <td><a href="{{i.doc.url}}">{{i.Bank_Statement}}</a></td>
+        <td><a href="{{i.doc.url}}">{{i.Bank_NOC}}</a></td>
+        <td><a href="{{i.doc.url}}">{{i.Salary_Slip}}</a></td>
+        <td><a href="{{i.doc.url}}">{{i.form_16_OR_ITR}}</a></td>
+        <td><a href="{{i.doc.url}}">{{i.signature}}</a></td>
+
+    </tbody>
+    {% endfor %}
+</table>
+
+
+</center>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
